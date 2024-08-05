@@ -1,0 +1,22 @@
+import { useState } from'react';
+
+function App() {
+
+  const [currTime,setCurrTime] = useState(new Date().toLocaleTimeString());
+
+  const getTime = () => {
+      setCurrTime(new Date().toLocaleTimeString());
+
+  }
+  return (
+    <>
+      <h1 >{currTime}</h1>
+      <div >
+      <button onClick={getTime}> GET TIME </button>
+      </div>
+
+    </>
+  );
+}
+
+export default App;

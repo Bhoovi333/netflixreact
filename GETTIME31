@@ -12,7 +12,7 @@ function App() {
     <>
       <h1 >{currTime}</h1>
       <div >
-      <button onClick={getTime}> GET TIME </button>
+      <button onClick={getTime}> GET TIME </button>                //if we want digital clock use callback......setinterval(gettime,1000);.........in starting{before return} 
       </div>
 
     </>

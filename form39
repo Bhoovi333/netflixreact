@@ -1,0 +1,35 @@
+import React, { useState } from "react";
+function App(){
+const [fullname,setname]=useState({});
+    const handleit=(e)=>{
+        const name=e.target.name
+        const value=e.target.value
+        setname(values=>({...value,[name]:value}))
+    }
+    const sumit=(e)=>{
+        e.preventDefault();
+        alert("submitted");
+    }
+return (
+<>
+<form onsubmit={sumit}>
+    <label >enter name
+        <input type="text" name="bhoovi" value={fullname.bhoovi}
+            onchange={handleit}/>
+            </label>
+    <label>enter mail
+             <input type="email" name="email" value={fullname.email}
+            onchange={handleit}/>
+                 </label>
+    <label>enter no
+                  <input type="number" name="bhoovi" value={fullname.number}
+            onchange={handleit}/>
+    </label>
+     <input type="submit"  onchange={sumit}/>
+</form>
+
+</> 
+);
+    
+}
+export default App;

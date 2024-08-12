@@ -1,0 +1,15 @@
+import REACT from "react";
+const todo=()=>{
+
+     return (
+         <>
+         <li>{props.text}</li>;
+    <button onclick={()=>{
+         props.onselect(props.id);
+   }}> remove</button>      
+    
+    
+    </>
+)
+};
+export default todo;

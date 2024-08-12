@@ -1,0 +1,45 @@
+ import React, { useState } from "react";
+import todo from "./todolist.jsx"
+
+function App(){
+const [inputlist,Setlist]=useState(" ")
+const  [items,Setitems]=useState([])
+    const inputevent=(event)=>{
+        Setlist(event.target.value)
+    };
+    const itemslist=()=>{
+        Setitems((olditems)=>{
+            return [...olditems,inputlist];
+        });
+ 
+    };
+    const deleteitems=(id)=>{
+        console.log("deleted item ")
+    
+        Setitems((olditems)=>{
+            return olditems.filter((arr,index)=>{
+                return index!==id;
+            })
+        })};
+           
+    return (
+<>
+<h1>TO-DO LIST BY BHOOVI</h1>
+    <input type="text" placeholder="Add tasks here" value={inputlist} 
+        onchange={inputevent}/>
+    <button onclick={itemslist}>+</button>
+
+    <ol>
+        {   items.map((itemval,index)=>{
+    return <todo
+               key={index}
+               text={itemval} 
+               id={index}
+               onselect={deleteitems}/>
+
+        })}
+   </ol>
+</>     
+    );
+}
+export default App;
